@@ -24,7 +24,7 @@ describe( "Request Data", function() {
 
 	it( "Retrieves valid JSON", function() {
 
-		return innoutLocations.get.then( function( json ){
+		return innoutLocations.get().then( function( json ){
 			expect( json ).to.be.jsonSchema( storeSchema );
 		}).catch( function( error ){
 			throw new Error( error );

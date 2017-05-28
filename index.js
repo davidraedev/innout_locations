@@ -1,6 +1,6 @@
 var fetch = require( "node-fetch" );
 
-var url = "http://locations.in-n-out.com/api/finder/search";
+var default_url = "http://locations.in-n-out.com/api/finder/search";
 
 var locations = null;
 var fetch_time = null;
@@ -12,24 +12,29 @@ var data = function() {
 	};
 };
 
-var get = new Promise( function( resolve, reject ) {
-	var self = this;
+var get = function ( url ){
+	
+	url = url || default_url;
 
-	fetch_time = new Date();
+	return new Promise( function( resolve, reject ) {
+		var self = this;
 
-	fetch( url )
-		.then( function( res ) {
-			return res.json();
-		})
-		.then( function( json ) {
-			locations = json;
-			resolve( data() );
-		})
-		.catch( function( error ) {
-			reject( error );
-		});
+		fetch_time = new Date();
 
-});
+		fetch( url )
+			.then( function( res ) {
+				return res.json();
+			})
+			.then( function( json ) {
+				locations = json;
+				resolve( data() );
+			})
+			.catch( function( error ) {
+				reject( error );
+			});
+
+	});
+};
 
 module.exports = {
 	get: get,
