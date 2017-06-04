@@ -7,8 +7,8 @@
 		"start": "node index.js",
 		"test": "mocha test/**.js"
 	},
-	"author": "",
-	"license": "ISC",
+	"author": "David Rae",
+	"license": "MIT",
 	"dependencies": {
 		"node-fetch": "^1.7.0"
 	},
@@ -16,5 +16,9 @@
 		"chai": "^4.0.0",
 		"chai-json-schema": "^1.4.0",
 		"mocha": "^3.4.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/daraeman/innout_locations.git"
 	}
 }
