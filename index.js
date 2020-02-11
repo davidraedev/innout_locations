@@ -1,6 +1,6 @@
 var fetch = require( "node-fetch" );
 
-var default_url = "http://locations.in-n-out.com/api/finder/search";
+var default_url = "https://locations.in-n-out.com/api/finder/search";
 
 var locations = null;
 var fetch_time = null;
