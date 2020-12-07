@@ -1,6 +1,6 @@
 {
 	"name": "innout_locations",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Fetches the locations of all the In-N-Out stores",
 	"main": "index.js",
 	"scripts": {
