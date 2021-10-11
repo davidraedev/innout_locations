@@ -22,13 +22,10 @@ var storeSchema = {
 
 describe( "Request Data", function() {
 
-	it( "Retrieves valid JSON", function() {
+	it( "Retrieves valid JSON", async function() {
 
-		return innoutLocations.get().then( function( json ){
-			expect( json ).to.be.jsonSchema( storeSchema );
-		}).catch( function( error ){
-			throw new Error( error );
-		});
+		const json = await innoutLocations.get()
+		expect( json ).to.be.jsonSchema( storeSchema );
 
 	});
 
